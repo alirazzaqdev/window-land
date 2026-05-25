@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import GoldDivider from '@/components/ui/GoldDivider'
 import { IconPhone, IconMail, IconBrandLinkedin } from '@tabler/icons-react'
 
@@ -39,13 +40,14 @@ export default function CEOSection() {
           {/* Left — CEO Photo */}
           <div className="relative">
             <div className="relative aspect-[4/5] max-w-sm mx-auto lg:mx-0 bg-brand-black-card border border-brand-gold-border overflow-hidden">
-              {/* Photo placeholder — swap with real image when available */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-brand-black-card">
-                <div className="w-24 h-24 rounded-full border-2 border-brand-gold flex items-center justify-center mb-4">
-                  <span className="font-display text-[32px] text-brand-gold font-light">MWA</span>
-                </div>
-                <p className="text-caption text-brand-text-muted uppercase tracking-[2px]">Photo Coming Soon</p>
-              </div>
+              <Image
+                src="/images/ceo/waqas-main.jpg"
+                alt="Muhammad Waqas Muhammad Akram — Founder & CEO, Window Land Dubai"
+                fill
+                className="object-cover object-top"
+                priority
+                sizes="(max-width: 768px) 100vw, 530px"
+              />
 
               {/* Frame accents */}
               <div className="absolute top-3 left-3 w-10 h-10 border-t-2 border-l-2 border-brand-gold pointer-events-none z-10" />
