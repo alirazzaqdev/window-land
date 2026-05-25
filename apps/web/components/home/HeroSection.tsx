@@ -112,8 +112,8 @@ export default function HeroSection() {
           <div ref={imageRef} className="relative h-[500px] lg:h-[700px]">
             <div className="absolute inset-0 rounded-sm overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=80"
-                alt="Window Land — Dubai Hills Villa curtain wall project"
+                src="https://images.unsplash.com/photo-1573755654354-4235c9ab1ac9?w=1200&q=85&fit=crop&crop=center"
+                alt="Burj Khalifa Dubai — Window Land Glass & Aluminium Works"
                 fill
                 className="object-cover"
                 priority
