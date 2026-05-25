@@ -1,0 +1,228 @@
+import type { IProject } from '@window-land/types'
+
+export const PROJECTS_DATA: IProject[] = [
+  {
+    _id: '1',
+    slug: 'dubai-hills-modern-luxury-villa',
+    title: 'Private Villa — Modern Luxury',
+    subtitle: 'Dubai Hills, Dubai',
+    location: { area: 'Dubai Hills', city: 'Dubai', country: 'UAE' },
+    client: { name: 'Private Client', company: 'Build Corp Interiors', type: 'residential' },
+    scope: [
+      'Curtain Wall System',
+      'Lift & Slide Doors',
+      'Glass Balustrade',
+      'Aluminium Pergola',
+      'Shower Partitions',
+    ],
+    value: { amount: 0, currency: 'AED', displayPublic: false },
+    timeline: { status: 'completed' },
+    specifications: {
+      materials: ['Powder Coated Aluminium', 'Tempered Glass', 'Laminated Glass'],
+      systems: ['Curtain Wall Thermal System', 'Lift & Slide Door System'],
+    },
+    description:
+      'A high-end residential project in Dubai Hills featuring full-height curtain wall glazing across the main facade. The client required a seamless transition between indoor and outdoor spaces, achieved through our Lift & Slide door system spanning 6 metres. Glass balustrade with frameless design was installed on all balconies, while a bespoke aluminium pergola crowns the entrance canopy.\n\nThe curtain wall system uses thermally broken aluminium profiles with double-glazed units, achieving excellent thermal and acoustic performance without compromising on the architectural vision. All aluminium elements are powder coated to a custom RAL shade matching the architectural drawings.\n\nDelivered in close coordination with the main contractor Build Corp Interiors, the project achieved practical completion within the agreed programme and has since received commendation from the client and their architect.',
+    highlights: [
+      '6-metre Lift & Slide door system opening to pool terrace',
+      'Full-height curtain wall facade across main elevation',
+      'Frameless glass balustrade on 3 levels with stainless fittings',
+      'Custom aluminium pergola over entrance — powder coated',
+      'Frameless glass shower enclosures throughout',
+    ],
+    images: {
+      cover: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=85',
+      gallery: [
+        {
+          url: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=900&q=80',
+          caption: 'Main facade — full-height curtain wall system',
+          alt: 'Dubai Hills villa curtain wall',
+        },
+        {
+          url: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=80',
+          caption: 'Poolside — 6m Lift & Slide door system open',
+          alt: 'Lift and slide door system',
+        },
+        {
+          url: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=900&q=80',
+          caption: 'Upper balcony — frameless glass balustrade detail',
+          alt: 'Glass balustrade balcony',
+        },
+        {
+          url: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=900&q=80',
+          caption: 'Entrance pergola — custom aluminium louvre system',
+          alt: 'Aluminium pergola entrance',
+        },
+      ],
+    },
+    tags: ['villa', 'residential', 'curtain-wall', 'dubai-hills'],
+    featured: true,
+    order: 1,
+    createdAt: new Date('2025-01-01'),
+    updatedAt: new Date('2025-01-01'),
+  },
+  {
+    _id: '2',
+    slug: 'palm-jumeirah-contemporary-villa',
+    title: 'Private Villa — Contemporary',
+    subtitle: 'Palm Jumeirah, Dubai',
+    location: { area: 'Palm Jumeirah', city: 'Dubai', country: 'UAE' },
+    client: { name: 'Private Client', company: 'Build Corp Interiors', type: 'residential' },
+    scope: [
+      'Aluminium Sliding Systems',
+      'Glass Balustrade',
+      'Balcony Railing',
+      'Mirror Works',
+    ],
+    value: { amount: 0, currency: 'AED', displayPublic: false },
+    timeline: { status: 'completed' },
+    description:
+      'Contemporary villa on Palm Jumeirah featuring custom aluminium sliding systems with panoramic sea views. The project included full-length sliding systems on the ground floor opening to the pool area, glass balustrade on upper levels, and custom mirror works in interior spaces.\n\nThe sea-facing elevation demanded sliding systems capable of handling salt-air exposure, addressed through marine-grade aluminium profiles with anodised finish and stainless steel hardware throughout. Custom-designed mirror wall panels were fabricated and installed in the master suite and entrance lobby.\n\nWork was completed in phases to accommodate the client\'s occupancy schedule, with all operations completed outside peak hours as agreed with the villa management team.',
+    highlights: [
+      'Full-length pool-facing sliding system with sea views',
+      'Marine-grade aluminium profile specification',
+      'Sea-view glass balustrade on all upper levels',
+      'Custom mirror wall panels in master suite and lobby',
+      'Anodised finish for salt-air durability',
+    ],
+    images: {
+      cover: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=85',
+      gallery: [
+        {
+          url: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=80',
+          caption: 'Pool terrace — full-length sliding system open to sea',
+          alt: 'Palm Jumeirah villa sliding doors',
+        },
+        {
+          url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80',
+          caption: 'Upper level — glass balustrade with sea view',
+          alt: 'Glass balustrade sea view',
+        },
+      ],
+    },
+    tags: ['villa', 'residential', 'sliding', 'palm-jumeirah'],
+    featured: true,
+    order: 2,
+    createdAt: new Date('2025-02-01'),
+    updatedAt: new Date('2025-02-01'),
+  },
+  {
+    _id: '3',
+    slug: 'sun-island-aluminium-pergola-sharjah',
+    title: 'Sun Island Villa A-42 — Aluminium Pergola',
+    subtitle: 'Ajmal Makan City, Sharjah',
+    location: { area: 'Ajmal Makan City', city: 'Sharjah', country: 'UAE' },
+    client: { name: 'Stars Development Co.', type: 'residential' },
+    contractor: { name: 'AL Hanoo Contracting LLC', contact: 'Mr. Irfan Khan — 056 509 6030' },
+    scope: ['Supply & Installation of Aluminium Pergola'],
+    value: { amount: 137000, currency: 'AED', displayPublic: true },
+    timeline: { status: 'completed' },
+    specifications: {
+      dimensions: '5500 x 8020mm',
+      materials: ['Aluminium RAL-7011 SDF'],
+      systems: [
+        'Main Structural Frame 100x200mm',
+        'Outer U-Channel Frame 100x50mm',
+        'Aluminium Louvre System 20x100mm',
+      ],
+    },
+    description:
+      'Supply and installation of a large aluminium pergola for Villa A-42 at Sun Island, Ajmal Makan City, Sharjah. The pergola features a louvered roof system with RAL-7011 powder coating, providing shade and aesthetic appeal to the villa entrance and outdoor living area. Contract awarded by AL Hanoo Contracting LLC (LPO PS-029/AHC/LPO/0494).\n\nThe structure spans 5500 x 8020mm, supported by a main structural frame of 100x200mm sections with an outer U-channel frame of 100x50mm. The aluminium louvre blades measure 20x100mm, providing effective sun shading while maintaining natural ventilation and visual openness.\n\nAll components were fabricated at our Dubai workshop and transported to site for installation. The RAL-7011 Iron Grey powder coat finish was selected by the client to complement the villa\'s exterior palette.',
+    highlights: [
+      '5500 x 8020mm total pergola footprint',
+      'Aluminium louvre system 20x100mm — RAL-7011 Iron Grey',
+      'Main structural frame 100x200mm powder coated',
+      'U-channel perimeter frame 100x50mm',
+      'Completed per LPO PS-029/AHC/LPO/0494',
+    ],
+    images: {
+      cover: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1200&q=85',
+      gallery: [
+        {
+          url: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=900&q=80',
+          caption: 'Completed pergola — RAL-7011 louvre system',
+          alt: 'Sun Island aluminium pergola',
+        },
+        {
+          url: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=900&q=80',
+          caption: 'Louvre blade detail — 20x100mm aluminium sections',
+          alt: 'Aluminium louvre detail',
+        },
+      ],
+    },
+    tags: ['pergola', 'residential', 'sharjah', 'louvre'],
+    featured: true,
+    order: 3,
+    createdAt: new Date('2025-03-01'),
+    updatedAt: new Date('2025-03-01'),
+  },
+  {
+    _id: '4',
+    slug: 'al-furjan-premium-villa-dubai',
+    title: 'Private Villa — Premium Design',
+    subtitle: 'Al Furjan, Dubai',
+    location: { area: 'Al Furjan', city: 'Dubai', country: 'UAE' },
+    client: { name: 'Private Client', type: 'residential' },
+    scope: [
+      'Swing & Sliding Windows',
+      'Glass Pool Fence',
+      'Tempered Glass',
+      'Aluminium Louvers',
+    ],
+    value: { amount: 0, currency: 'AED', displayPublic: false },
+    timeline: { status: 'completed' },
+    description:
+      'Premium residential project in Al Furjan featuring a complete aluminium and glass package. Swing and sliding windows were installed throughout the villa, with a full glass pool fence using toughened glass for safety. Aluminium louvered screens were installed on the side boundary for privacy.\n\nThe glass pool fence uses 12mm toughened safety glass with stainless steel spigots, meeting Dubai municipality safety standards for pool enclosures. The boundary louvre screens provide privacy while allowing air flow through the landscape areas.\n\nAll aluminium windows were fabricated with thermal break profiles and argon-filled double glazing, improving the villa\'s thermal envelope.',
+    highlights: [
+      'Full-perimeter glass pool fence — 12mm toughened glass',
+      'Stainless steel spigot system for pool fence',
+      'Custom aluminium louvre privacy screens at boundary',
+      'Thermally broken aluminium windows throughout',
+      'Argon-filled double glazing for energy efficiency',
+    ],
+    images: {
+      cover: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=85',
+      gallery: [
+        {
+          url: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=900&q=80',
+          caption: 'Glass pool fence — 12mm toughened glass with SS spigots',
+          alt: 'Al Furjan glass pool fence',
+        },
+      ],
+    },
+    tags: ['villa', 'residential', 'al-furjan', 'pool-fence'],
+    featured: false,
+    order: 4,
+    createdAt: new Date('2025-04-01'),
+    updatedAt: new Date('2025-04-01'),
+  },
+  {
+    _id: '5',
+    slug: 'jumeirah-golf-estate-private-villa',
+    title: 'Private Villa',
+    subtitle: 'Jumeirah Golf Estate, Dubai',
+    location: { area: 'Jumeirah Golf Estate', city: 'Dubai', country: 'UAE' },
+    client: { name: 'Private Client', type: 'residential' },
+    scope: ['Aluminium Works', 'Glass Works', 'Custom Fabrication'],
+    value: { amount: 0, currency: 'AED', displayPublic: false },
+    timeline: { status: 'completed' },
+    description:
+      'Residential project at Jumeirah Golf Estate featuring custom aluminium and glass works. Direct client project with bespoke fabrication requirements.\n\nThe scope covered a range of custom aluminium and glass elements specified to complement the architectural design. All items were fabricated at our Dubai workshop and installed by our technical team.',
+    highlights: ['Bespoke aluminium fabrication to architectural specification', 'Custom glass specifications'],
+    images: {
+      cover: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=85',
+      gallery: [
+        {
+          url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80',
+          caption: 'Custom aluminium works — Jumeirah Golf Estate',
+          alt: 'Jumeirah Golf Estate villa',
+        },
+      ],
+    },
+    tags: ['villa', 'residential', 'golf-estate'],
+    featured: false,
+    order: 5,
+    createdAt: new Date('2025-05-01'),
+    updatedAt: new Date('2025-05-01'),
+  },
+]
