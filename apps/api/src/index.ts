@@ -10,6 +10,7 @@ import servicesRouter from './routes/services'
 import contactRouter from './routes/contact'
 import inquiriesRouter from './routes/inquiries'
 import authRouter from './routes/auth'
+import adminRouter from './routes/admin'
 import { connectMongoDB } from './config/mongodb'
 
 export const logger = {
@@ -46,6 +47,7 @@ app.use('/api/services', servicesRouter)
 app.use('/api/contact', contactRouter)
 app.use('/api/inquiries', inquiriesRouter)
 app.use('/api/auth', authRouter)
+app.use('/api/admin', adminRouter)
 
 // Health check
 app.get('/health', (_req, res) => res.json({ status: 'ok', timestamp: new Date().toISOString() }))

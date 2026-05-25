@@ -64,4 +64,28 @@ router.get('/me', requireAuth, (req: AuthRequest, res: Response) => {
   res.json({ user: req.user })
 })
 
+router.post('/change-password', requireAuth, async (req: Request, res: Response) => {
+  const { currentPw, newPw } = req.body
+  if (!currentPw || !newPw || newPw.length < 8) {
+    res.status(422).json({ error: 'Invalid password data' })
+    return
+  }
+  const expectedHash = process.env.ADMIN_PASSWORD_HASH
+  if (!expectedHash) {
+    res.status(500).json({ error: 'Admin password not configured' })
+    return
+  }
+  const valid = await bcrypt.compare(currentPw, expectedHash)
+  if (!valid) {
+    res.status(401).json({ error: 'Current password is incorrect' })
+    return
+  }
+  const newHash = await bcrypt.hash(newPw, 12)
+  res.json({
+    success: true,
+    message: 'Set this as your ADMIN_PASSWORD_HASH environment variable in Railway.',
+    newHash,
+  })
+})
+
 export default router
