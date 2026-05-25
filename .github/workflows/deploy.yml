@@ -2,7 +2,7 @@ name: Deploy Window Land
 
 on:
   push:
-    branches: [main]
+    branches: [master]
 
 jobs:
   deploy-frontend:
