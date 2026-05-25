@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import type { IProject } from '@window-land/types'
+import type { IProject } from '@/types'
 import { formatAED } from '@/lib/utils'
 
 interface ProjectCardProps {

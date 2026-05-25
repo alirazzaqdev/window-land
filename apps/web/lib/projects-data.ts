@@ -1,4 +1,4 @@
-import type { IProject } from '@window-land/types'
+import type { IProject } from '@/types'
 
 export const PROJECTS_DATA: IProject[] = [
   {

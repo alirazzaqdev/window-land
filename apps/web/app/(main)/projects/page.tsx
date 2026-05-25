@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { PROJECTS_DATA } from '@/lib/projects-data'
 import ProjectCard from '@/components/projects/ProjectCard'
 import ProjectFilter from '@/components/projects/ProjectFilter'
-import type { IProject } from '@window-land/types'
+import type { IProject } from '@/types'
 
 type Filter = 'All' | 'Residential' | 'Commercial' | 'Ongoing' | 'Completed'
 

@@ -1,7 +1,5 @@
 {
   "framework": "nextjs",
-  "buildCommand": "cd ../.. && npm run build -- --filter=@window-land/web",
-  "outputDirectory": ".next",
   "headers": [
     {
       "source": "/(.*)",
@@ -16,13 +14,6 @@
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
-    }
-  ],
-  "redirects": [
-    {
-      "source": "/www.windowland.ae/:path*",
-      "destination": "https://windowland.ae/:path*",
-      "permanent": true
     }
   ]
 }

@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { api } from '@/lib/api'
-import { ALL_SERVICES } from '@window-land/types'
+import { ALL_SERVICES } from '@/types'
 import { IconCheck, IconAlertCircle } from '@tabler/icons-react'
 
 const schema = z.object({

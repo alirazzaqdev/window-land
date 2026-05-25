@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { api } from '@/lib/api'
-import type { IProject } from '@window-land/types'
+import type { IProject } from '@/types'
 import { IconPlus, IconPencil, IconTrash, IconStar } from '@tabler/icons-react'
 import Image from 'next/image'
 
