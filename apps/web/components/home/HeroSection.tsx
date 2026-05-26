@@ -1,149 +1,90 @@
-'use client'
-
-import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import Button from '@/components/ui/Button'
-import { IconShieldCheck, IconUsers, IconTools, IconBuildingSkyscraper } from '@tabler/icons-react'
 
-const HERO_WORDS = ['One', 'Stop', 'Solution', 'for', 'Glass', '&', 'Aluminium', 'Works']
-const GOLD_WORDS = ['Glass', '&', 'Aluminium']
-
-const trustItems = [
-  { icon: IconShieldCheck, label: 'UAE Licensed' },
-  { icon: IconUsers, label: '12+ Team' },
-  { icon: IconTools, label: '19+ Services' },
-  { icon: IconBuildingSkyscraper, label: '5+ Projects' },
-]
+const trustItems = ['UAE Licensed', '12+ Team', '19+ Services', '5+ Projects']
 
 export default function HeroSection() {
-  const wordsRef = useRef<HTMLSpanElement[]>([])
-  const imageRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    let gsap: typeof import('gsap').default | null = null
-
-    const init = async () => {
-      const mod = await import('gsap')
-      gsap = mod.default
-      const words = wordsRef.current.filter(Boolean)
-      gsap.from(words, { opacity: 0, y: 40, duration: 0.8, stagger: 0.08, ease: 'power3.out' })
-      if (imageRef.current) {
-        gsap.from(imageRef.current, {
-          opacity: 0,
-          x: 60,
-          duration: 1,
-          ease: 'power3.out',
-          delay: 0.3,
-        })
-      }
-    }
-
-    init()
-  }, [])
-
   return (
-    <section className="relative min-h-screen flex items-center bg-brand-black overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              'linear-gradient(rgba(201,168,76,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.3) 1px, transparent 1px)',
-            backgroundSize: '60px 60px',
-          }}
+    <section className="relative w-full min-h-[90vh] flex items-center overflow-hidden">
+
+      {/* FULL WIDTH BACKGROUND IMAGE */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <Image
+          src="/images/hero/dubai-hero.jpg"
+          alt="Dubai skyline sunset — Window Land Glass & Aluminium Dubai UAE"
+          fill
+          className="object-cover object-[center_30%] hero-image"
+          priority
+          sizes="100vw"
         />
+
+        {/* Left strong dark — text readable */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/65 to-black/20" />
+
+        {/* Bottom fade to black */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+
+        {/* Top subtle fade */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent" />
       </div>
 
-      <div className="container-custom w-full pt-24 pb-16">
-        <div className="grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-12 lg:gap-16 items-center">
-          {/* Left — Content */}
-          <div>
-            <p className="text-label text-brand-gold uppercase tracking-[5px] mb-6 font-sans">
-              Dubai, UAE · Est. December 2024
-            </p>
+      {/* GOLD CORNER FRAMES */}
+      <div className="absolute top-6 left-8 z-10 w-10 h-10 border-t-2 border-l-2 border-brand-gold/50" />
+      <div className="absolute bottom-8 right-8 z-10 w-8 h-8 border-b-2 border-r-2 border-brand-gold/30" />
 
-            <h1 className="font-display font-light leading-[1.0] mb-8 text-[clamp(36px,5vw,64px)]">
-              {HERO_WORDS.map((word, i) => (
-                <span key={i}>
-                  <span
-                    ref={(el) => { if (el) wordsRef.current[i] = el }}
-                    className={GOLD_WORDS.includes(word) ? 'text-brand-gold italic' : 'text-white'}
-                  >
-                    {word}
-                  </span>
-                  {i < HERO_WORDS.length - 1 ? ' ' : ''}
-                </span>
-              ))}
-            </h1>
+      {/* ALL TEXT CONTENT ON TOP */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-16 py-24">
+        <div className="max-w-2xl">
 
-            <p className="text-body text-brand-text-muted max-w-lg leading-relaxed mb-8">
-              Window Land is a Dubai-based premium glass and aluminium installation company
-              delivering curtain wall systems, sliding doors, pergolas, ACP cladding, and complete
-              glazing solutions for residential and commercial projects across the UAE.
-            </p>
+          {/* Eyebrow */}
+          <p className="text-brand-gold text-[10px] tracking-[4px] uppercase mb-6 flex items-center gap-3 animate-fadeUp">
+            <span className="w-6 h-px bg-brand-gold" />
+            Dubai, UAE · Est. December 2024
+          </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-10">
-              <Link href="/services">
-                <Button variant="primary" size="lg">
-                  Explore Services
-                </Button>
-              </Link>
-              <Link href="/projects">
-                <Button variant="ghost" size="lg">
-                  View Projects
-                </Button>
-              </Link>
-            </div>
+          {/* H1 */}
+          <h1 className="font-display text-5xl lg:text-6xl xl:text-7xl font-light text-white leading-[1.05] mb-6 tracking-[-1px] animate-fadeUp [animation-delay:200ms]">
+            One Stop Solution for<br />
+            <em className="text-brand-gold italic">Glass &amp; Aluminium</em><br />
+            Works
+          </h1>
 
-            {/* Trust row */}
-            <div className="flex flex-wrap gap-6 border-t border-brand-gold-border pt-6">
-              {trustItems.map(({ icon: Icon, label }) => (
-                <div key={label} className="flex items-center gap-2 text-caption text-brand-text-muted">
-                  <Icon size={14} className="text-brand-gold" />
-                  <span className="uppercase tracking-[1.5px]">{label}</span>
-                </div>
-              ))}
-            </div>
+          {/* Description */}
+          <p className="text-[#7a7060] text-sm leading-[1.75] mb-10 max-w-lg font-light animate-fadeUp [animation-delay:400ms]">
+            Window Land is a Dubai-based premium glass and aluminium installation company
+            delivering curtain wall systems, sliding doors, pergolas, ACP cladding, and complete
+            glazing solutions for residential and commercial projects across the UAE.
+          </p>
+
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-14 animate-fadeUp [animation-delay:600ms]">
+            <Link
+              href="/services"
+              className="inline-flex items-center justify-center bg-brand-gold text-black px-8 py-3 text-[11px] tracking-[2px] uppercase font-medium hover:brightness-110 transition-all"
+            >
+              Explore Services
+            </Link>
+            <Link
+              href="/projects"
+              className="inline-flex items-center justify-center border border-brand-gold/50 text-brand-gold px-8 py-3 text-[11px] tracking-[2px] uppercase font-light hover:border-brand-gold hover:bg-brand-gold/5 transition-all"
+            >
+              View Projects
+            </Link>
           </div>
 
-          {/* Right — Image */}
-          <div ref={imageRef} className="relative h-[500px] lg:h-[700px]">
-            <div className="absolute inset-0 rounded-sm overflow-hidden">
-              <Image
-                src="/images/hero/dubai-hero.jpg"
-                alt="Dubai skyline sunset — Window Land Glass & Aluminium Dubai UAE"
-                fill
-                className="object-cover object-center hero-image"
-                priority
-                sizes="100vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-black/70 to-black/35" />
-            </div>
-
-            {/* Floating stats */}
-            <div className="absolute bottom-6 left-6 right-6 bg-brand-black/90 border border-brand-gold-border p-5 rounded-sm">
-              <div className="grid grid-cols-3 gap-4 divide-x divide-brand-gold-border">
-                {[
-                  { num: '5+', label: 'Projects' },
-                  { num: '19+', label: 'Services' },
-                  { num: '12+', label: 'Team' },
-                ].map(({ num, label }) => (
-                  <div key={label} className="text-center px-2">
-                    <p className="font-display text-[28px] text-brand-gold font-light">{num}</p>
-                    <p className="text-caption text-brand-text-muted uppercase tracking-[1.5px]">{label}</p>
-                  </div>
-                ))}
+          {/* Trust bar */}
+          <div className="flex flex-wrap items-center gap-6 border-t border-white/10 pt-8 animate-fadeUp [animation-delay:800ms]">
+            {trustItems.map((item) => (
+              <div key={item} className="flex items-center gap-2 text-[10px] text-[#5a5040] tracking-[1px] uppercase">
+                <span className="text-brand-gold text-xs">✦</span>
+                {item}
               </div>
-            </div>
-
-            {/* Gold frame accent */}
-            <div className="absolute top-4 left-4 w-12 h-12 border-t-2 border-l-2 border-brand-gold pointer-events-none" />
-            <div className="absolute bottom-4 right-4 w-12 h-12 border-b-2 border-r-2 border-brand-gold pointer-events-none" />
+            ))}
           </div>
+
         </div>
       </div>
+
     </section>
   )
 }
