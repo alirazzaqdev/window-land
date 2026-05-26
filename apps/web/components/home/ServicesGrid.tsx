@@ -1,18 +1,18 @@
 'use client'
 
 import Link from 'next/link'
-import { IconArrowRight } from '@tabler/icons-react'
-import SectionHeader from '@/components/ui/SectionHeader'
 import {
-  IconWindow,
+  IconArrowRight,
   IconDoor,
-  IconWall,
-  IconBath,
+  IconFence,
+  IconLayoutBoard,
+  IconDroplet,
   IconTool,
-  IconLayoutGrid,
-  IconSun,
-  IconAirConditioning,
+  IconLayoutColumns,
+  IconWindow,
+  IconDiamond,
 } from '@tabler/icons-react'
+import SectionHeader from '@/components/ui/SectionHeader'
 
 const FEATURED = [
   {
@@ -33,13 +33,13 @@ const FEATURED = [
 
 const REGULAR = [
   { title: 'Sliding Doors', slug: 'sliding-doors', icon: IconDoor, desc: 'Lift & slide, bifold, and automatic sliding systems for seamless indoor-outdoor connection.' },
-  { title: 'Glass Balustrade', slug: 'glass-balustrade', icon: IconWindow, desc: 'Frameless and semi-frameless glass balustrade for balconies, staircases, and pool areas.' },
-  { title: 'ACP Cladding', slug: 'acp-cladding', icon: IconWall, desc: 'Aluminium composite panel cladding for modern facade finishes on commercial buildings.' },
-  { title: 'Office Partitions', slug: 'office-partitions', icon: IconLayoutGrid, desc: 'Full-height glass office partitions with aluminium frames for open-plan workspaces.' },
-  { title: 'Shower Partitions', slug: 'shower-partitions', icon: IconBath, desc: 'Frameless and semi-frameless shower enclosures with premium hardware finishes.' },
+  { title: 'Glass Balustrade', slug: 'glass-balustrade', icon: IconFence, desc: 'Frameless and semi-frameless glass balustrade for balconies, staircases, and pool areas.' },
+  { title: 'ACP Cladding', slug: 'acp-cladding', icon: IconLayoutBoard, desc: 'Aluminium composite panel cladding for modern facade finishes on commercial buildings.' },
+  { title: 'Office Partitions', slug: 'office-partitions', icon: IconLayoutColumns, desc: 'Full-height glass office partitions with aluminium frames for open-plan workspaces.' },
+  { title: 'Shower Partitions', slug: 'shower-partitions', icon: IconDroplet, desc: 'Frameless and semi-frameless shower enclosures with premium hardware finishes.' },
   { title: 'Metal Fabrication', slug: 'metal-fabrication', icon: IconTool, desc: 'Custom steel and aluminium fabrication for architectural metalwork and structural elements.' },
-  { title: 'Ventilation Windows', slug: 'ventilation-windows', icon: IconAirConditioning, desc: 'Swing, casement, and tilt-turn aluminium windows with superior weather sealing.' },
-  { title: 'Tempered Glass Works', slug: 'tempered-glass-works', icon: IconSun, desc: 'Toughened, laminated, and double-glazed glass supply and installation.' },
+  { title: 'Ventilation Windows', slug: 'ventilation-windows', icon: IconWindow, desc: 'Swing, casement, and tilt-turn aluminium windows with superior weather sealing.' },
+  { title: 'Tempered Glass Works', slug: 'tempered-glass-works', icon: IconDiamond, desc: 'Toughened, laminated, and double-glazed glass supply and installation.' },
 ]
 
 export default function ServicesGrid() {
@@ -61,17 +61,17 @@ export default function ServicesGrid() {
               className="group flex flex-col justify-between p-8 bg-brand-black-card border-l-2 border-brand-gold border-r border-t border-b border-brand-gold-border hover:bg-[#111] transition-all duration-300 min-h-[200px]"
             >
               <div>
-                <span className="text-caption text-brand-gold uppercase tracking-[2px] mb-4 inline-block">
+                <span className="text-[9px] tracking-[3px] text-brand-gold uppercase mb-4 inline-block">
                   {s.tag}
                 </span>
                 <h3 className="font-display text-[28px] text-white font-light mb-3 group-hover:text-brand-gold transition-colors duration-200">
                   {s.title}
                 </h3>
-                <p className="text-body-sm text-brand-text-muted leading-relaxed">{s.description}</p>
+                <p className="text-[14px] text-[#9a9080] leading-relaxed font-light">{s.description}</p>
               </div>
               <div className="flex items-center gap-2 mt-6 text-brand-gold text-[12px] uppercase tracking-[2px]">
                 <span>Learn More</span>
-                <IconArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-200" />
+                <IconArrowRight size={14} stroke={2} className="group-hover:translate-x-1 transition-transform duration-200" />
               </div>
             </Link>
           ))}
@@ -85,14 +85,14 @@ export default function ServicesGrid() {
               href={`/services/${slug}`}
               className="group p-6 bg-brand-black-card border border-brand-gold-border hover:border-brand-gold hover:bg-[#111] transition-all duration-300"
             >
-              <Icon size={22} className="text-brand-gold mb-4" />
+              <Icon size={22} stroke={1.5} className="text-brand-gold mb-4" />
               <h3 className="font-sans font-medium text-[14px] text-white mb-2 group-hover:text-brand-gold transition-colors duration-200">
                 {title}
               </h3>
               <p className="text-caption text-brand-text-muted leading-relaxed">{desc}</p>
               <div className="flex items-center gap-1 mt-4 text-brand-gold text-[11px] uppercase tracking-[1.5px] opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                 <span>Details</span>
-                <IconArrowRight size={12} />
+                <IconArrowRight size={12} stroke={2} />
               </div>
             </Link>
           ))}
@@ -100,8 +100,9 @@ export default function ServicesGrid() {
 
         <div className="text-center">
           <Link href="/services">
-            <button className="text-[12px] uppercase tracking-[2px] text-brand-gold border border-brand-gold px-8 py-3 hover:bg-brand-gold hover:text-brand-black transition-all duration-200">
-              View All 19 Services →
+            <button className="inline-flex items-center gap-2 text-[12px] uppercase tracking-[2px] text-brand-gold border border-brand-gold px-8 py-3 hover:bg-brand-gold hover:text-brand-black transition-all duration-200">
+              View All 19 Services
+              <IconArrowRight size={13} stroke={2} />
             </button>
           </Link>
         </div>

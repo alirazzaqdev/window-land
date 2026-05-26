@@ -51,10 +51,10 @@ export default function WhyUs() {
                   key={label}
                   className="p-4 border border-brand-gold-border bg-brand-black-card"
                 >
-                  <p className="text-caption text-brand-text-muted uppercase tracking-[2px] mb-1">
+                  <p className="text-caption text-[#6a6050] uppercase tracking-[2px] mb-1">
                     {label}
                   </p>
-                  <p className="text-[14px] font-medium text-brand-gold">{value}</p>
+                  <p className="text-[14px] font-medium text-[#c9a84c]">{value}</p>
                 </div>
               ))}
             </div>
@@ -68,8 +68,8 @@ export default function WhyUs() {
                   {num}
                 </span>
                 <div className="border-t border-brand-gold-border pt-3 flex-1">
-                  <h3 className="font-sans font-medium text-[14px] text-white mb-2">{title}</h3>
-                  <p className="text-body-sm text-brand-text-muted leading-relaxed">{desc}</p>
+                  <h3 className="font-sans font-medium text-[14px] text-[#e0d8c8] mb-2">{title}</h3>
+                  <p className="text-body-sm text-[#8a8272] leading-relaxed">{desc}</p>
                 </div>
               </div>
             ))}

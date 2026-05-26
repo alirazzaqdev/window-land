@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { IconBrandLinkedin, IconBrandInstagram, IconPhone, IconMail, IconMapPin } from '@tabler/icons-react'
+import { IconPhone, IconMail, IconMapPin } from '@tabler/icons-react'
 import GoldDivider from '@/components/ui/GoldDivider'
 
 const quickLinks = [
@@ -38,24 +38,20 @@ export default function Footer() {
               Premium glass and aluminium installation company based in Dubai, UAE. Delivering
               architectural excellence across the Emirates since 2024.
             </p>
-            <div className="flex gap-4">
+            <div className="flex flex-col gap-3">
               <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 border border-brand-gold-border flex items-center justify-center text-brand-text-muted hover:text-brand-gold hover:border-brand-gold transition-all duration-200"
-                aria-label="LinkedIn"
+                href="tel:+971504552652"
+                className="flex items-center gap-2 text-body-sm text-brand-text-muted hover:text-brand-gold transition-colors duration-200"
               >
-                <IconBrandLinkedin size={16} />
+                <IconPhone size={13} className="text-brand-gold flex-shrink-0" />
+                +971 50 455 2652
               </a>
               <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 border border-brand-gold-border flex items-center justify-center text-brand-text-muted hover:text-brand-gold hover:border-brand-gold transition-all duration-200"
-                aria-label="Instagram"
+                href="mailto:info@windowland.ae"
+                className="flex items-center gap-2 text-body-sm text-brand-text-muted hover:text-brand-gold transition-colors duration-200"
               >
-                <IconBrandInstagram size={16} />
+                <IconMail size={13} className="text-brand-gold flex-shrink-0" />
+                info@windowland.ae
               </a>
             </div>
           </div>
