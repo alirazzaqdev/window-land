@@ -6,6 +6,7 @@ const nextConfig = {
       { protocol: 'https', hostname: 'images.unsplash.com' },
     ],
     formats: ['image/avif', 'image/webp'],
+    qualities: [85, 90, 95],
   },
   experimental: {
     optimizePackageImports: ['@tabler/icons-react', 'framer-motion'],

@@ -81,6 +81,10 @@
 .hero-image {
   animation: kenBurns 10s ease-in-out infinite alternate;
   will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: auto;
 }
 
 @keyframes fadeUp {

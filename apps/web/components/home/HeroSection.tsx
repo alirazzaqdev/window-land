@@ -13,6 +13,7 @@ export default function HeroSection() {
           src="/images/hero/dubai-hero.jpg"
           alt="Dubai skyline sunset — Window Land Glass & Aluminium Dubai UAE"
           fill
+          quality={95}
           className="object-cover object-[center_30%] hero-image"
           priority
           sizes="100vw"
