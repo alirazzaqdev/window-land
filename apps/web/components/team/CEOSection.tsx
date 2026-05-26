@@ -44,7 +44,8 @@ export default function CEOSection() {
                 src="/images/ceo/waqas-main.jpg"
                 alt="Muhammad Waqas Muhammad Akram — Founder & CEO, Window Land Dubai"
                 fill
-                className="object-cover object-top"
+                className="object-cover"
+                style={{ objectPosition: 'center 15%' }}
                 priority
                 sizes="(max-width: 768px) 100vw, 530px"
               />
