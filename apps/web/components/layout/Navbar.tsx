@@ -42,8 +42,8 @@ export default function Navbar() {
         className={clsx(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
           scrolled
-            ? 'bg-brand-black/95 backdrop-blur-sm border-b border-brand-gold-border'
-            : 'bg-transparent'
+            ? 'bg-black/95 backdrop-blur-sm border-b border-brand-gold/20'
+            : 'bg-black/75 backdrop-blur-md border-b border-brand-gold/20'
         )}
       >
         <div className="container-custom flex items-center justify-between h-16 md:h-20">
